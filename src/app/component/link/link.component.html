@@ -1,0 +1,12 @@
+<a [routerLink]="link"
+   class="px-3 py-2 rounded text-white ease-in duration-100"
+   [class.bg-danger-500]="type === 'danger'"
+   [class.hover:bg-danger-800]="type === 'danger'"
+   [class.bg-success-500]="type === 'success'"
+   [class.hover:bg-success-800]="type === 'success'"
+   [class.bg-secondary-500]="type === 'secondary'"
+   [class.hover:bg-secondary-800]="type === 'secondary'"
+   [class.hover:bg-primary-800]="type === 'primary' || ''"
+   [class.bg-primary-500]="type === 'primary' || ''">
+  <ng-content></ng-content>
+</a>

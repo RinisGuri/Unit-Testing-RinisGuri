@@ -1,0 +1,36 @@
+<section class="border-0 border-b pb-3 mb-3 flex justify-between">
+  <h1 class="text-xl">User list</h1>
+  <app-link [link]="['/user', 'new']">Add user</app-link>
+</section>
+<section>
+  <input type="search" class="p-3 border-2" placeholder="Search..."  [formControl]="searchControl">
+</section>
+<section>
+  <table class="table-auto w-full overflow-x-scroll">
+    <thead class="border-b">
+    <th class="text-left pr-6 py-3">Id</th>
+    <th class="text-left pr-6 py-3">Name</th>
+    <th class="text-left pr-6 py-3">Email</th>
+    <th class="text-left pr-6 py-3">Company</th>
+    <th class="text-left pr-6 py-3">Address</th>
+    <th class="text-left pr-6 py-3"></th>
+    </thead>
+    <tbody>
+      @for (user of userList; track user.id) {
+        <tr>
+          <td class="text-left pr-6 py-2">{{ user.id }}</td>
+          <td class="text-left pr-6 py-2">{{ user.name }}</td>
+          <td class="text-left pr-6 py-2">{{ user.email }}</td>
+          <td class="text-left pr-6 py-2">{{ user.company.name }}</td>
+          <td class="text-left pr-6 py-2">
+            {{user.address.street}}, {{user.address.city}} {{user.address.zipcode}}
+          </td>
+          <td>
+            <app-link [link]="['/user', user.id]" class="mr-3">View</app-link>
+            <app-button [variant]="'danger'">Delete</app-button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

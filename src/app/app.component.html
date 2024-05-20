@@ -1,0 +1,17 @@
+<main class="bg-gray-100 min-h-[100vh]">
+  <section class="container mx-auto pt-6">
+    <section>
+      <h1 class="text-3xl mb-3">Makerspace demo application</h1>
+    </section>
+    <section class="mb-3">
+      <div class="flex">
+        @for (tab of tabList; track tab.name) {
+          <a class="mr-3 hover:text-primary-600 hover:underline" [routerLink]="tab.route">{{tab.name}}</a>
+        }
+      </div>
+    </section>
+    <section class="bg-white rounded p-3">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</main>

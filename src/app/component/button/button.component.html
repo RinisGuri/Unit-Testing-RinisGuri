@@ -1,0 +1,15 @@
+<button class="px-3 py-2 rounded text-white ease-in duration-100"
+        [disabled]="disabled"
+        [type]="type"
+        [class.!bg-gray-200]="disabled"
+        [class.!pointer-events-none]="disabled"
+        [class.bg-danger-500]="variant === 'danger'"
+        [class.hover:bg-danger-800]="variant === 'danger'"
+        [class.bg-success-500]="variant === 'success'"
+        [class.hover:bg-success-800]="variant === 'success'"
+        [class.bg-secondary-500]="variant === 'secondary'"
+        [class.hover:bg-secondary-800]="variant === 'secondary'"
+        [class.hover:bg-primary-800]="variant === 'primary' || ''"
+        [class.bg-primary-500]="variant === 'primary' || ''">
+  <ng-content></ng-content>
+</button>
